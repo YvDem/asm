@@ -12,12 +12,12 @@
   "contributes": {
     "languages": [{
       "id": "pinguin-asm",
-      "aliases": ["pingu asm", "pinguasm", "pasm"],
+      "aliases": ["pinguin asm", "pinguasm", "pasm"],
       "extensions": [".asm"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
-      "language": "asm",
+      "language": "pasm",
       "scopeName": "prog.asm",
       "path": "./syntaxes/pinguasm.tmLanguage.json"
     }]
