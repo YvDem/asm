@@ -17,7 +17,7 @@
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
-      "language": "pasm",
+      "language": "asm",
       "scopeName": "prog.asm",
       "path": "./syntaxes/pinguasm.tmLanguage.json"
     }]
