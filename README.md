@@ -1,6 +1,6 @@
 # asm README
 
-This is the README for your extension "asm". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "pasm". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 

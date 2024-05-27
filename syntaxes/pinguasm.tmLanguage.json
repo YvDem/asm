@@ -1,16 +1,12 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "pingu asm",
+	"name": "pinguin asm",
 	"patterns": [
 		{
 			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
-		},
-		{
-			"name": "comment.asm",
-			"begin": ";"
 		}
 	],
 	"repository": {
