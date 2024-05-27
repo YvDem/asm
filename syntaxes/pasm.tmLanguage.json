@@ -1,0 +1,54 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "pinguin assembly",
+	
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#instruction"
+		},
+		{
+			"include": "#label"
+		},
+		{
+			"include": "#operator"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#string"
+		}
+	],
+
+	"repository": {
+		"comment": {
+			"patterns": [
+				{
+					"begin": ";",
+					"end": ".*",
+					"captures": {
+						"0": {
+							"name": "comment.line"
+						}
+					}
+				}
+			]
+		},
+		"instruction": {
+			"patterns": [
+				{
+					"match": "\\b(ADDLW|ADDWF|ANDLW|ANDWF|BCF|BSF|BTFSC|BTFSS|CALL|CLRF|CLRW|CLRWDT|COMF|DECF|DECFSZ|GOTO|INCF|INCFSZ|IORLW|IORWF|MOVF|MOVLW|MOVWF|NOP|OPTION|RETLW|RLF|RRF|SLEEP|SUBWF|SWAPF|TRIS|XORLW|XORWF|MOVLB|RETFIE|RETURN)\\b",
+					"captures": {
+						"0": {
+							"name": "keyword.control"
+						}
+					}
+				}
+			]
+		}
+	},
+	"scopeName": "source.asm"
+}

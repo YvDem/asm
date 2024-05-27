@@ -1,5 +1,10 @@
 {
   "name": "pinguin-asm",
+  "author": {
+    "name": "Yvan",
+    "email": "yampleman1401@gmail.com"
+  },
+  "publisher": "Yvan",
   "displayName": "pasm",
   "description": "personnal asm syntax support",
   "version": "0.0.1",
@@ -11,15 +16,28 @@
   ],
   "contributes": {
     "languages": [{
-      "id": "pinguin-asm",
-      "aliases": ["pinguin asm", "pinguasm", "pasm"],
-      "extensions": [".asm"],
+      "id": "pasm",
+      "aliases": ["pasm", "pinguasm", "pasm"],
+      "extensions": [".asm", ".pasm"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
       "language": "pasm",
-      "scopeName": "prog.asm",
-      "path": "./syntaxes/pinguasm.tmLanguage.json"
-    }]
+      "scopeName": "source.asm",
+      "path": "./syntaxes/pasm.tmLanguage.json"
+    }],
+    "themes": [
+      {
+        "label": "pasm++",
+        "uiTheme": "vs-dark",
+        "path": "./colorthemes/pasm_theme.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "pasm",
+        "path": "./snippets/pasm.json"
+      }
+    ]
   }
 }
