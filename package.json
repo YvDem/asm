@@ -1,0 +1,25 @@
+{
+  "name": "pinguin-asm",
+  "displayName": "pasm",
+  "description": "personnal asm syntax support",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "pinguin-asm",
+      "aliases": ["pingu asm", "pinguasm", "pasm"],
+      "extensions": [".asm"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "pasm",
+      "scopeName": "prog.asm",
+      "path": "./syntaxes/pinguasm.tmLanguage.json"
+    }]
+  }
+}
