@@ -26,10 +26,84 @@
 		},
 		{
 			"include": "#variable"
+		},
+		{
+			"include": "#register"
 		}
 	],
 
 	"repository": {
+		"register": {
+			"patterns": [
+				{
+					"match": "\\b(W|w|F|f|STATUS|status|PORTA|porta|PORTB|portb)",
+					"captures": {
+						"0": {
+							"name": "variable.other.register"
+						}
+					}
+				}
+			]
+		},
+		"macro": {
+			"patterns": [
+				{
+					"begin": "([a-zA-Z]\\S*)\\s+(macro)[ \t]+([a-zA-Z]\\S*)",
+					"end": "\\b(endm)",
+					"beginCaptures": {
+						"1": {
+							"name": "macro.name"
+						},
+						"2": {
+							"name": "macro.start"
+						},
+						"3": {
+							"name": "variable"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "macro.end"
+						}
+					},
+					"patterns": [
+						{"include": "#comment"},
+						{"include": "#instruction"},
+						{"include": "#label"},
+						{"include": "#operator"},
+						{"include": "#number"},
+						{"include": "#string"},
+						{"include": "#variable"}
+					]
+				},
+				{
+					"begin": "([a-zA-Z]\\S*)\\s+(macro)",
+					"end": "\\b(endm)",
+					"beginCaptures": {
+						"1": {
+							"name": "macro.name"
+						},
+						"2": {
+							"name": "macro.start"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "macro.end"
+						}
+					},
+					"patterns": [
+						{"include": "#comment"},
+						{"include": "#instruction"},
+						{"include": "#label"},
+						{"include": "#operator"},
+						{"include": "#number"},
+						{"include": "#string"},
+						{"include": "#variable"}
+					]
+				}
+			]
+		},
 		"comment": {
 			"patterns": [
 				{
@@ -151,7 +225,19 @@
 					"patterns": [
 						{"include": "#number"},
 						{
-							
+							"begin": "\\b([a-zA-Z_]+[a-zA-Z0-9_]?)",
+							"end": "(:)",
+							"beginCaptures": {
+								"0": {
+									"name": "variable"
+								}
+							},
+							"endCaptures": {
+								"0": {
+									"name": "punctuation.definition.double_colon"
+								}
+							}
+
 						}
 					]
 				}

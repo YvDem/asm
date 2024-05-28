@@ -9,9 +9,11 @@
  ; LVP - Low voltage programming (off)
  ; MCLRE - Holds MCLR pin high if on (on)
 
-  cblock 0x20      ; Declare variable addresses starting at 0x20
-  DELAY,DELAYTMP
-  endc
+cblock 0x20
+  variable1 : 1
+  variable2 : 1
+  variable3 : 1
+endc
 
 ; TEST NUMBERS
 B'00000001'
@@ -35,14 +37,16 @@ H'1234'
 h1234
 H1234
 
-
 1234
 356
 45675
 
 
+;##### Commands #####
+
+
 ;##### Macros #####
-DELAY_MILLI macro TIME
+delay_milli macro TIME
   movlw TIME
   movwf DELAY
   call DELAY_MS
@@ -59,7 +63,7 @@ SENDDATA macro DATA
   call TRANSMIT
   endm
 
-CLEARSCREEN macro
+clearscreen macro 
   movlw 0xFE
   call TRANSMIT
   movlw 0x58
