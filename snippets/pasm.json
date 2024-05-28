@@ -8,5 +8,10 @@
         "prefix": "addwf",
         "body": "ADDWF $1,$2",
         "description": "Add W to <f>, result in <dst>"
+    },
+    "binary_numeric": {
+        "prefix": "B",
+        "body": "B'$1'",
+        "description": "Binary numeric constant"
     }
 }

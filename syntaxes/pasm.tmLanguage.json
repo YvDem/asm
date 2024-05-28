@@ -48,6 +48,50 @@
 					}
 				}
 			]
+		},
+		"number": {
+			"patterns": [
+				{
+					"match": "(B'[0-1]*')",
+					"captures": {
+						"0": {
+							"name": "constant.numeric.binary"
+						}
+					}
+				},
+				{
+					"match": "(0x[0-9a-fA-F]*)",
+					"captures": {
+						"0": {
+							"name": "constant.numeric.hex"
+						}
+					}
+				},
+				{
+					"match": "(D'[0-9]*')",
+					"captures": {
+						"0": {
+							"name": "constant.numeric.decimal"
+						}
+					}
+				},
+				{
+					"match": "(O'[0-7]*')",
+					"captures": {
+						"0": {
+							"name": "constant.numeric.octal"
+						}
+					}
+				},
+				{
+					"match": "(H'[0-9a-fA-F]'*)",
+					"captures": {
+						"0": {
+							"name": "constant.numeric.hex"
+						}
+					}
+				}
+			]
 		}
 	},
 	"scopeName": "source.asm"

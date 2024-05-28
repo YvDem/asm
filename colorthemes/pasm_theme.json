@@ -92,7 +92,7 @@
 				"entity.name.operator"
 			],
 			"settings": {
-				"foreground": "#4465d3"
+				"foreground": "#7797ff"
 			}
 		},
 		{
@@ -112,10 +112,31 @@
 			"name": "Constants and enums",
 			"scope": [
 				"variable.other.constant",
-				"variable.other.enummember"
+				"variable.other.enummember",
+				"constant.numeric.binary",
+				"constant.numeric.decimal",
+				"constant.numeric",
 			],
 			"settings": {
-				"foreground": "#4FC1FF",
+				"foreground": "#73c398f2",
+			}
+		},
+		{
+			"name":"Octals",
+			"scope": [
+				"constant.numeric.octal"
+			],
+			"settings": {
+				"foreground": "#88be1d"
+			}
+		},
+		{
+			"name": "Hex litterals",
+			"scope": [
+				"constant.numeric.hex"
+			],
+			"settings": {
+				"foreground": "#90a7ec"
 			}
 		},
 		{
