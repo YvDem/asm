@@ -1,12 +1,12 @@
 {
     "ADDLW": {
         "prefix": "addlw",
-        "body": "ADDLW $1",
+        "body": "addlw $1",
         "description": "Add immediate to W"
     },
     "ADDWF": {
         "prefix": "addwf",
-        "body": "ADDWF $1,$2",
+        "body": "addwf $1,$2",
         "description": "Add W to <f>, result in <dst>"
     },
     "binary_numeric": {

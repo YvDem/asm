@@ -20,6 +20,12 @@
 		},
 		{
 			"include": "#string"
+		},
+		{
+			"include": "#macro"		
+		},
+		{
+			"include": "#variable"
 		}
 	],
 
@@ -40,10 +46,24 @@
 		"instruction": {
 			"patterns": [
 				{
-					"match": "\\b(ADDLW|ADDWF|ANDLW|ANDWF|BCF|BSF|BTFSC|BTFSS|CALL|CLRF|CLRW|CLRWDT|COMF|DECF|DECFSZ|GOTO|INCF|INCFSZ|IORLW|IORWF|MOVF|MOVLW|MOVWF|NOP|OPTION|RETLW|RLF|RRF|SLEEP|SUBWF|SWAPF|TRIS|XORLW|XORWF|MOVLB|RETFIE|RETURN)\\b",
+					"match": "\\b(addlw|nop|sleep|addwf|andlw|andwf|bcf|bsf|btfsc|btfss|clrf|clrw|clrwdt|comf|decf|decfsz|incf|incfsz|iorlw|iorwf|movf|movlw|movwf|option|retlw|rlf|rrf|subwf|swapf|tris|xorlw|xorwf|movlb|retfie)\\b",
 					"captures": {
 						"0": {
 							"name": "keyword.control"
+						}
+					}
+				},
+				{
+					"begin": "\\b(call|goto|return)\\b",
+					"end": "\\b\\w+\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "keyword.controlflow"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "label"
 						}
 					}
 				}
@@ -52,7 +72,7 @@
 		"number": {
 			"patterns": [
 				{
-					"match": "(B'[0-1]*')",
+					"match": "\\b((B|b)'?[0-1]+'?)",
 					"captures": {
 						"0": {
 							"name": "constant.numeric.binary"
@@ -60,7 +80,7 @@
 					}
 				},
 				{
-					"match": "(0x[0-9a-fA-F]*)",
+					"match": "\\b((h|H|0x)'?[0-9a-fA-F]+'?)",
 					"captures": {
 						"0": {
 							"name": "constant.numeric.hex"
@@ -68,7 +88,7 @@
 					}
 				},
 				{
-					"match": "(D'[0-9]*')",
+					"match": "\\b((D|d)'?[0-9]+'?)",
 					"captures": {
 						"0": {
 							"name": "constant.numeric.decimal"
@@ -76,7 +96,7 @@
 					}
 				},
 				{
-					"match": "(O'[0-7]*')",
+					"match": "\\b((o|O)'?[0-7]+'?)",
 					"captures": {
 						"0": {
 							"name": "constant.numeric.octal"
@@ -84,12 +104,56 @@
 					}
 				},
 				{
-					"match": "(H'[0-9a-fA-F]'*)",
+					"match": "\\b\\d+\\b",
 					"captures": {
 						"0": {
-							"name": "constant.numeric.hex"
+							"name": "constant.numeric"
 						}
 					}
+				}
+			]
+		},
+		"label":{
+			"patterns": [
+				{
+					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*:)",
+					"captures": {
+						"0": {
+							"name": "label"
+						}
+					}
+				}
+			]
+		},
+		"variable":{
+			"patterns": [
+				{
+					"match": "\\b(randompattern[a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"0": {
+							"name": "variable"
+						}
+					}
+				},
+				{
+					"begin": "\\b(cblock)\\b",
+					"end": "\\b(endc)\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "keyword.control"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "keyword.control"
+						}
+					},
+					"patterns": [
+						{"include": "#number"},
+						{
+							
+						}
+					]
 				}
 			]
 		}

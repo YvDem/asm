@@ -81,7 +81,7 @@
 			}
 		},
 		{
-			"name": "Control flow / Special keywords",
+			"name": "Keywords",
 			"scope": [
 				"keyword.control",
 				"source.cpp keyword.operator.new",
@@ -96,40 +96,75 @@
 			}
 		},
 		{
-			"name": "Variable and parameter name",
+			"name":"Control flow and loop keywords",
 			"scope": [
-				"variable",
-				"meta.definition.variable.name",
-				"support.variable",
-				"entity.name.variable",
-				"constant.other.placeholder", // placeholders in strings
+				"keyword.controlflow"
 			],
 			"settings": {
-				"foreground": "#9CDCFE"
+				"foreground": "#e676cadb",
+				"fontStyle": "bold"
 			}
 		},
 		{
-			"name": "Constants and enums",
+			"name": "Variable and parameter name",
 			"scope": [
-				"variable.other.constant",
-				"variable.other.enummember",
-				"constant.numeric.binary",
-				"constant.numeric.decimal",
+				"variable",
+			],
+			"settings": {
+				"foreground": "#c2c5c7"
+			}
+		},
+		{
+			"name": "Numeric values",
+			"scope": [
 				"constant.numeric",
+			],
+			"settings": {
+				"foreground": "#a1c5f5f2",
+			}
+		},
+		// Decimal
+		{
+			"name":"Decimal",
+			"scope": [
+				"constant.numeric.decimal"
 			],
 			"settings": {
 				"foreground": "#73c398f2",
 			}
 		},
+		// Binary
+		{
+			"name":"Binary",
+			"scope": [
+				"constant.numeric.binary"
+			],
+			"settings": {
+				"foreground": "#b5cea8",
+			}
+		},
+		// Labels
+		{
+			"name":"Labels",
+			"scope": [
+				"label"
+			],
+			"settings": {
+				"foreground": "#daa7fa",
+				"fontStyle": "underline"
+			}
+		},
+		// Octals
 		{
 			"name":"Octals",
 			"scope": [
 				"constant.numeric.octal"
 			],
 			"settings": {
-				"foreground": "#88be1d"
+				"foreground": "#99eabff2",
 			}
 		},
+		// Hex litterals
 		{
 			"name": "Hex litterals",
 			"scope": [
@@ -138,98 +173,6 @@
 			"settings": {
 				"foreground": "#90a7ec"
 			}
-		},
-		{
-			"name": "Object keys, TS grammar specific",
-			"scope": [
-				"meta.object-literal.key"
-			],
-			"settings": {
-				"foreground": "#9CDCFE"
-			}
-		},
-		{
-			"name": "CSS property value",
-			"scope": [
-				"support.constant.property-value",
-				"support.constant.font-name",
-				"support.constant.media-type",
-				"support.constant.media",
-				"constant.other.color.rgb-value",
-				"constant.other.rgb-value",
-				"support.constant.color"
-			],
-			"settings": {
-				"foreground": "#CE9178"
-			}
-		},
-		{
-			"name": "Regular expression groups",
-			"scope": [
-				"punctuation.definition.group.regexp",
-				"punctuation.definition.group.assertion.regexp",
-				"punctuation.definition.character-class.regexp",
-				"punctuation.character.set.begin.regexp",
-				"punctuation.character.set.end.regexp",
-				"keyword.operator.negation.regexp",
-				"support.other.parenthesis.regexp"
-			],
-			"settings": {
-				"foreground": "#CE9178"
-			}
-		},
-		{
-			"scope": [
-				"constant.character.character-class.regexp",
-				"constant.other.character-class.set.regexp",
-				"constant.other.character-class.regexp",
-				"constant.character.set.regexp"
-			],
-			"settings": {
-				"foreground": "#d16969"
-			}
-		},
-		{
-			"scope": [
-				"keyword.operator.or.regexp",
-				"keyword.control.anchor.regexp"
-			],
-			"settings": {
-				"foreground": "#DCDCAA"
-			}
-		},
-		{
-			"scope": "keyword.operator.quantifier.regexp",
-			"settings": {
-				"foreground": "#d7ba7d"
-			}
-		},
-		{
-			"scope": [
-				"constant.character",
-				"constant.other.option"
-			],
-			"settings": {
-				"foreground": "#569cd6"
-			}
-		},
-		{
-			"scope": "constant.character.escape",
-			"settings": {
-				"foreground": "#d7ba7d"
-			}
-		},
-		{
-			"scope": "entity.name.label",
-			"settings": {
-				"foreground": "#C8C8C8"
-			}
 		}
-	],
-	"semanticTokenColors": {
-		"newOperator":"#C586C0",
-		"stringLiteral":"#ce9178",
-		"customLiteral": "#DCDCAA",
-		"numberLiteral": "#b5cea8",
-	}
+	]
 }
