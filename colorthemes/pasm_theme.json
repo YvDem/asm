@@ -41,7 +41,8 @@
 				"macro.name"
 			],
 			"settings": {
-				"foreground": "#ab9cb3"
+				"foreground": "#c6bed5",
+				"fontStyle": "bold"
 			}
 		},
 		{

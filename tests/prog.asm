@@ -82,8 +82,14 @@ delay_us:               ; busy wait of DELAY us
   goto delay_us          ; loop if not done (4,5)
   return               ; gtfo (4,5)
 
+
+test:
+
+test:
+
+
 delay_us:           ; busy wait of DELAY ms
-  movf DELAY,w
+	movf DELAY,w
   movwf DELAYTMP         ; save DELAY time
 DELAY_MS_LOOP            ; inner loop
   movlw 245               ; load 245 (1)
